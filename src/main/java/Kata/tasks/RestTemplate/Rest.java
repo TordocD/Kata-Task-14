@@ -21,7 +21,7 @@ public class Rest {
         ResponseEntity<String> getUsers = restTemplate.getForEntity(users, String.class);
         HttpHeaders header = new HttpHeaders();
         header.add("Cookie", getUsers.getHeaders().get("Set-Cookie").get(0));
-        System.out.println("Cookie: " + getUsers.getHeaders().get("Set-Cookie").get(0));
+        System.out.println("Cookie: " + header);
 
 //        POST
         HttpEntity<User> postEntity = new HttpEntity<>(postedUser, header);
